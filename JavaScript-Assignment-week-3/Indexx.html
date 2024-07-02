@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styless.css">
+    <title>Basic Calculations</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <section class="Number1">
+        <h1>Part-1 JavaScript Calculations</h1>
+        <div class="container">
+            <input type="text" id="Input-Field">
+            <button class="Btn" onclick="ShowInput('7')" >7</button>
+            <button class="Btn" onclick="ShowInput('8')" >8</button>
+            <button class="Btn" onclick="ShowInput('9')" >9</button>
+            <button class="Btn" id="Clear" onclick="Clear()">C</button>
+            <button class="Btn" onclick="ShowInput('4')" >4</button>
+            <button class="Btn" onclick="ShowInput('5')" >5</button>
+            <button class="Btn" onclick="ShowInput('6')" >6</button>
+            <button class="Btn" onclick="ShowInput('1')" >1</button>
+            <button class="Btn" onclick="ShowInput('2')" >2</button>
+            <button class="Btn" onclick="ShowInput('3')" >3</button>
+            <button class="Btn" onclick="ShowInput('0')" >0</button>
+            <button class="Btn" onclick="ShowInput('.')" >.</button>
+            <button class="Btn" onclick="ShowInput('*')" >*</button>
+            <button class="Btn" onclick="ShowInput('+')" >+</button>
+            <button class="Btn" onclick="ShowInput('-')" >-</button>
+            <button class="Btn" onclick="ShowInput('/')" >/</button>
+            <button class="Btn" onclick="ShowTotal()">=</button>
+        </div>    
+    </section>
+
+    <section class="Number2">
+        <h1>Part-2 DOM Manipulation</h1>
+        <div class="circle" id="Circle-color">
+            
+        </div>
+        <button id="Btn">Click Me</button>
+    </section>
+  
+    <h1>Part-3 Chart.js</h1>
+    <!-- Canvas element for Chart.js -->
+    <canvas id="myChart" width="400" height="400"></canvas>
+  
+    <script src="Script.js"></script>
+
+    <script>
+        // JavaScript for Chart.js integration
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar', // Specify the chart type, e.g., bar, line, pie, etc.
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: 'Random Data', // Label for the dataset
+                    data: [12, 19, 3, 5, 2, 3], // Data values to plot
+                    backgroundColor: [ // Background color for bars
+                        'rgba(255, 99, 132, 0.2)',
+                        'rgba(54, 162, 235, 0.2)',
+                        'rgba(255, 206, 86, 0.2)',
+                        'rgba(75, 192, 192, 0.2)',
+                        'rgba(153, 102, 255, 0.2)',
+                        'rgba(255, 159, 64, 0.2)'
+                    ],
+                    borderColor: [ // Border color for bars
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(54, 162, 235, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(153, 102, 255, 1)',
+                        'rgba(255, 159, 64, 1)'
+                    ],
+                    borderWidth: 1 // Border width for bars
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true // Start y-axis scale from zero
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
